@@ -6,5 +6,25 @@ function TrappingRainWater(height) {
   let left  = 1;
   let right = n - 2;
 
-  while
+  while(left <= right){
+    let waterTrapped;
+
+    if(maxLeft <= maxRight){
+        waterTrapped = maxLeft - height[left];
+        maxLeft = max(maxLeft, height[left]);
+        left++;
+    }
+    else{
+       waterTrapped = maxRight - height[right];
+       maxRight =  max(maxRight, height[right]);
+       right--;
+    }
+
+    if(waterTrapped > 0){
+       result += waterTrapped;  
+    }    
+
+  }
+
+  return result;
 }
