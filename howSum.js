@@ -6,7 +6,7 @@ const howSum = (target, values, memo={}) => {
     for(let value of values){
        const remaining = target - value;
        const newValue = howSum(remaining, values, memo);
-       if( newValue !== null){
+       if(newValue !== null){
          memo[target] = [ ...newValue, value ];
          return memo[target];
        }
